@@ -1,13 +1,13 @@
 def best_stock(data):
     mexp = 0
     res = ''
-    for value in data:
-        if data[value] > mexp:
-            mexp = data[value]
-            res = value
-        return res
+    for v in data:
+        if data[v] > mexp:
+            mexp = data[v]
+            res = v
+    return res
+    return 'GOOG'
 
-return 'GOOG'
 
 if __name__ == '__main__':
     print("Example:")
