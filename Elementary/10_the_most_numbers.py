@@ -1,5 +1,14 @@
 def checkio(*args):
-    return 0
+    list = []
+    for arg in args:
+        list.append(arg)
+    if len(list) == 0:
+        return 0
+    else:
+        small = min(list)
+        big = max(list)
+        res = big - small
+    return res
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
@@ -12,3 +21,5 @@ if __name__ == '__main__':
     assert almost_equal(checkio(10.2, -2.2, 0, 1.1, 0.5), 12.4, 3), "10.2-(-2.2)=12.4"
     assert almost_equal(checkio(), 0, 3), "Empty"
     print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+
+
