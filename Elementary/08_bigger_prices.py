@@ -4,7 +4,6 @@ def bigger_price(limit: int, data: list) -> list:
     """
     return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]
 
-
 if __name__ == '__main__':
     from pprint import pprint
     print('Example:')
