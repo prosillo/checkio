@@ -1,8 +1,15 @@
 def checkio(number: int) -> int:
-    res = 0
+    import functools
+    import operator
+    a = []
     for x in str(number):
         n = int(x)
-        if n != 0:
+        if not n:
+            continue
+        else:
+            a.append(n)
+    res = functools.reduce(operator.mul, a)
+    return res
 
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
