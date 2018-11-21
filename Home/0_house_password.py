@@ -6,23 +6,19 @@ def checkio(data):
         for x in data:
             if x.isupper():
                 cap += 1
-                print(x + " : Caps")
-                print(cap)
-                continue
-            if x.islower():
+            elif x.islower():
                 low += 1
-                print(x + " : Low")
-                print(low)
-                continue
-            if x.isnumeric():
+            elif x.isnumeric():
                 num += 1
-                print(x + " : Num")
-                print(num)
-                continue
-        if (num, cap, low) > 0:
+        if num and cap and low > 0:
+            print("STRONG Password:", data, " - ", "Numbers:", num, "- Caps:", cap, "- Low:", low)
             return True
         else:
+            print("Weak Password:", data, " - ", "Numbers:", num, "- Caps:", cap, "- Low:", low)
             return False
+    else:
+        print("Short Password:", data, " - ", "Numbers:", num, "- Caps:", cap, "- Low:", low)
+        return False
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
