@@ -29,3 +29,14 @@ if __name__ == '__main__':
     assert checkio('123456123456') == False, "5th example"
     assert checkio('QwErTy911poqqqq') == True, "6th example"
     print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+
+""" 
+
+Faster way !!!
+
+def checkio(data: str) -> bool: 
+    if len(data) >= 10 and any(x for x in data if x.isupper()) and any(x for x in data if x.islower()) and any(x for x in data if x.isdigit()):
+        return True
+    else:
+        return False
+"""
