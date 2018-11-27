@@ -11,11 +11,15 @@ def checkio(text: str) -> list:
         else:
             pass
     result = result.items()
-    return max(sorted(max(result, key=lambda x: x[1])[0], reverse=True))
+    result = min(sorted(max(result, key=lambda x: x[1])[0], reverse=True))
+    print(result)
+    return result
+
+#max(sorted(max(result, key=lambda x: x[1])[0], reverse=True))
 
 if __name__ == '__main__':
-    print("Example:")
-    print(checkio("Hello World!"))
+    #print("Example:")
+    #print(checkio("Hello World!"))
 
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio("Hello World!") == "l", "Hello test"
