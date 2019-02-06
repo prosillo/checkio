@@ -1,25 +1,21 @@
-def checkio(text: str) -> list:
-    text = text.lower()
-    result = {}
-    for char in text:
-        keys = result.keys()
+def checkio(text: str) -> str:
+    textlow = text.lower()
+    charcount = {}
+    for char in textlow:
         if char.isalpha():
-           if char in keys:
-               result[char] += 1
-           else:
-                result[char] = 1
+            if char in charcount:
+                charcount[char] += 1
+            else:
+                charcount[char] = 1
         else:
             pass
-    result = result.items()
-    result = min(sorted(max(result, key=lambda x: x[1])[0], reverse=True))
-    print(result)
-    return result
-
-#max(sorted(max(result, key=lambda x: x[1])[0], reverse=True))
+    charsorted = dict(sorted(charcount.items()))
+    charmax = max(charsorted, key=charsorted.get)
+    return charmax
 
 if __name__ == '__main__':
-    #print("Example:")
-    #print(checkio("Hello World!"))
+    print("Example:")
+    print(checkio("Hello World!"))
 
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio("Hello World!") == "l", "Hello test"
