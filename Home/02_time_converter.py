@@ -1,7 +1,14 @@
 def time_converter(time):
-    # replace this for solution
-    return time
-
+    hh = int(time[:2])
+    if hh == 00:
+        return (str(12) + str(time[2:]) + ' a.m.')
+    elif hh == 12:
+        return (str(time) + ' p.m.')
+    elif hh >= 13:
+        hh = hh - 12
+        return (str(hh) + str(time[2:]) + ' p.m.')
+    else:
+        return (str(time[1:]) + ' a.m.')
 
 if __name__ == '__main__':
     print("Example:")
