@@ -1,20 +1,11 @@
-#Your optional code here
-#You can import some modules or create additional functions
-
-
 def checkio(data: list) -> list:
-    #Your code here
-    #It's main function. Don't remove this function
-    #It's used for auto-testing and must return a result for check.
-
-    #replace this for solution
-    return data
-
-#Some hints
-#You can use list.count(element) method for counting.
-#Create new list with non-unique elements
-#Loop over original list
-
+    new_data = []
+    for x in data:
+        if data.count(x) > 1:
+            new_data.append(x)
+        else:
+            pass
+    return new_data
 
 if __name__ == "__main__":
     #These "asserts" using only for self-checking and not necessary for auto-testing
@@ -23,4 +14,3 @@ if __name__ == "__main__":
     assert list(checkio([5, 5, 5, 5, 5])) == [5, 5, 5, 5, 5], "3rd example"
     assert list(checkio([10, 9, 10, 10, 9, 8])) == [10, 9, 10, 10, 9], "4th example"
     print("It is all good. Let's check it now")
-S
